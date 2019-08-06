@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(13, 87, 92, 0.2);
+    background: 
+        repeating-linear-gradient(-45deg, rgb(13, 87, 92, 0.2) 5%,  rgb(13, 87, 92, 0.8) 10%);
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    margin: 0;
+    padding: 2rem 0;
+    width : 100%;
+    box-sizing: border-box;
+}
+
+#content {
+    background: 
+        repeating-linear-gradient( 45deg,rgb(13, 87, 92, 0.2) 5%,  rgb(13, 87, 92, 0.8) 10%);
+}
+
+#content p {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 8vh;
+
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+#comments {
+    background: 
+        repeating-linear-gradient( 45deg, rgb(13, 87, 92, 0.2) 5%,  rgb(13, 87, 92, 0.8) 10%);
+}
+
+#comments h2 {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.comment h3 {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.comment p {
+    font-family: 'Ubuntu Mono', monospace;
+}
+.artObject {
+    max-width: 80%;
+    max-height: 20rem;
+    margin: 1rem;
+    background-color: rgba(26, 15, 1, 0.575)
+}
