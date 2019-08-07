@@ -6,6 +6,23 @@ function submitComment() {
     // getting the message from the user
     let inputMessage = document.getElementById('msg')
     let msg = inputMessage.value
+    //running the validation function and checking it
+    if (doesNotPassAllValidation(name, msg)) {
+        return null
+    }
+     // capitalize name
+     if (name[0] !== name[0].toUpperCase()) {
+         name = name.replace(name[0], name[0].toUpperCase())
+        }
+    // checking for bad language
+    let swear = ['fuck', 'shit', 'asshole', 'pussy']
+    for (let i = 0; i < swear.length; i++) {
+        if (msg.search(swear[i]) !== -1) {
+            alert('Warning: this comment has been flagged as offensive.')
+            return null
+        }
+    }
+     
     // creating elements to show name and message from user on the page
     const comment = document.createElement('section')
     const h3 = document.createElement('h3')
@@ -20,8 +37,23 @@ function submitComment() {
     //getting the commentsection of the page and appending the new comment as a child
     let commentSection = document.getElementById('comments')
     commentSection.appendChild(comment)
-    inputField.value = null
-    inputMessage.value = null
 }
 
-
+function doesNotPassAllValidation(name, msg) {
+    // checking whether the user typed something
+    if (!name && !msg) {
+        alert('You forgot to fill in your name and message!')
+        return true
+    } else if (!name) {
+        alert('You forgot to fill in your name!')
+        return true
+    } else if (!msg) {
+        alert('You forgot to fill in your message!')
+        return true
+    } else if (msg.length > 280) {
+        alert('This message is too long')
+        return true
+    } else {
+        return false
+    }
+}
