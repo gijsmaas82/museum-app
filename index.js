@@ -325,6 +325,19 @@ const data = {
   }
 
   function displayPainting(painting) {
+        if (painting.webImage.width < 500) {
+            return null
+        } else if (painting.principalOrFirstMaker === "Gerard van Honthorst") {
+            return null
+        } 
+
+        const placeOfDatePictureInLongtitle = painting.longTitle.length - 4
+        const datePicture = painting.longTitle.slice(placeOfDatePictureInLongtitle)
+
+        if (datePicture >= 1800) {
+            return null
+        }
+        //longTitle: "Een vrolijke vioolspeler, Gerard van Honthorst, 1623",
         const title = painting.title
         const src = painting.webImage.url
         const gallery = document.getElementById('gallery')
@@ -346,8 +359,7 @@ const data = {
 
   function displayAllPaintings(paintings) {
   for (let i = 0; i < paintings.length; i++) {
-        displayPainting(paintings[i])
-        
+    displayPainting(paintings[i])
   }
 }
 
